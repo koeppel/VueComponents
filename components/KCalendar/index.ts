@@ -1,0 +1,1 @@
+export { default as KCalendar, today, weekDays, type Week, type BirthDayWrapper, getWeeksForMonth } from "./KCalendar.vue";
