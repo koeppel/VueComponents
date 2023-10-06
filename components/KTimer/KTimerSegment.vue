@@ -12,7 +12,7 @@
 
 	const innerSegment = ref<TimerSegment>(props.segment);
 
-	const emit = defineEmits(["durationChanged", "nameChanged", "colorChanged"]);
+	const emit = defineEmits(["durationChanged", "nameChanged", "pinColorChanged"]);
 
 	function setName(newName: string): void {
 		innerSegment.value.name = newName;
@@ -26,7 +26,7 @@
 
 	function setColor(color: string): void {
 		innerSegment.value.pin.color = color;
-		emit("colorChanged", color);
+		emit("pinColorChanged", color);
 	};
 
 </script>
@@ -46,6 +46,9 @@
 </script>
 <template>
 	<v-row style="align-items:center">
+		<v-col cols="1">
+			<slot name="settings"></slot>
+		</v-col>
 		<v-col cols="4">
 			<slot name="name">
 				<v-text-field
@@ -59,14 +62,11 @@
 					@update:model-value="setColor"></v-select>
 			</slot>
 		</v-col>
-		<v-col cols="8">
+		<v-col cols="7">
 			<k-time-select
 				:duration="innerSegment.duration"
 				:disabled="disabled"
 				@duration-changed="(duration) => { setDuration(duration); }">
-				<template #prepend>
-					<slot name="delete"></slot>
-				</template>
 			</k-time-select>
 		</v-col>
 	</v-row>

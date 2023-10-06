@@ -88,7 +88,7 @@
 					<v-row class="px-0">
 						<v-col class="px-0">
 							<v-btn
-								icon="mdi-arrow-up"
+								icon="mdi-chevron-up"
 								:disabled="disabled"
 								@click="add({ hours: 1})"></v-btn>
 						</v-col>
@@ -101,7 +101,7 @@
 					<v-row class="px-0">
 						<v-col class="px-0">
 							<v-btn
-								icon="mdi-arrow-down"
+								icon="mdi-chevron-down"
 								:disabled="disabled || innerDuration.hours === 0"
 								@click="subtract({ hours: 1 })"></v-btn>
 						</v-col>
@@ -114,7 +114,7 @@
 					<v-row class="px-0">
 						<v-col class="px-0">
 							<v-btn
-								icon="mdi-arrow-up"
+								icon="mdi-chevron-up"
 								:disabled="disabled"
 								@click="add({ minutes: 1})"></v-btn>
 						</v-col>
@@ -127,7 +127,7 @@
 					<v-row class="px-0">
 						<v-col class="px-0">
 							<v-btn
-								icon="mdi-arrow-down"
+								icon="mdi-chevron-down"
 								:disabled="disabled || (innerDuration.hours === 0 && innerDuration.minutes === 0)"
 								@click="subtract({ minutes: 1})"></v-btn>
 						</v-col>
@@ -140,7 +140,7 @@
 					<v-row class="px-0">
 						<v-col class="px-0">
 							<v-btn
-								icon="mdi-arrow-up"
+								icon="mdi-chevron-up"
 								:disabled="disabled"
 								@click="add({ seconds: 1})"></v-btn>
 						</v-col>
@@ -153,15 +153,12 @@
 					<v-row class="px-0">
 						<v-col class="px-0">
 							<v-btn
-								icon="mdi-arrow-down"
+								icon="mdi-chevron-down"
 								:disabled="disabled || (innerDuration.hours === 0 && innerDuration.minutes === 0 && innerDuration.seconds === 0)"
 								@click="subtract({ seconds: 1})"></v-btn>
 						</v-col>
 					</v-row>
 				</v-container>
-			</v-col>
-			<v-col cols="1" class="px-0">
-				<slot name="prepend"></slot>
 			</v-col>
 		</v-row>
 	</v-container>
